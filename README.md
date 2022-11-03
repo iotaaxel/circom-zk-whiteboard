@@ -7,11 +7,22 @@ The following image taken from the ZK Whiteboard Session Module Five slides desc
 </figure>
 
 ## Notes
-- In this example, `S` is used as an operator selector. `S0` and `S1` are set to 1 to indicate addition gates. `S2` is set to 0 to indicate a multication gate. These are important to apply the row constraint equally. 
-- Row constraint: `S_i[x_i+y_i]+(1-S_i)[x_i*y_i]-c_i=0`
-  - at i=0: `(x_0+y_0) - c_0 = 0`
-  - at i=1: `(x_1+y_1) - c_1 = 0` 
-  - at i=2: `(x_2*y_2) - c_2 = 0`
+- In this example, `S` is used as an operator selector. `S0` and `S1` are set to 1 to indicate addition gates. `S2` is set to 0 to indicate a multication gate. These are important to apply the row constraint equally.
+
+- $$
+\begin{flalign}
+\text{The row constraint is } &S_i[x_i+y_i]+(1-S_i)[x_i*y_i]-c_i=0&
+\end{flalign}
+$$
+
+    $$
+    \begin{flalign}
+    \text{at i=0: } &(x_0+y_0) - c_0 = 0& \\
+    \text{at i=1: } &(x_1+y_1) - c_1 = 0& \\
+    \text{at i=2: } &(x_2*y_2) - c_2 = 0& \\
+    \end{flalign}
+    $$
+    
 - **Important Note:** The arithmetic circuit has been constructed with these row constraints but since Circom does not allow non-quadratic constraints, the row constraints are not explicitly stated.
 
 ## Resources
